@@ -12,9 +12,27 @@
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl</Import>
+    <Import>http://purl.obolibrary.org/obo/bfo/2020/bfo-core.owl</Import>
     <Import>http://purl.obolibrary.org/obo/cob/releases/2023-11-16/cob-full.owl</Import>
     <Import>http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport</Import>
+    <Declaration>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000017"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000062"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000101"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000102"/>
+    </Declaration>
     <Declaration>
         <Class IRI="#AdministrationEvent"/>
     </Declaration>
@@ -71,6 +89,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Hospitalization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Human"/>
     </Declaration>
     <Declaration>
         <Class IRI="#IcdDescription"/>
@@ -144,6 +165,99 @@
     <Declaration>
         <Class IRI="#SubjectOfCare"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002461"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002462"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#partnerOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subjectParticipantOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#targetParticipantOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000232"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#HealthcareProvider"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealthcareActor"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#Human"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002462"/>
+                        <Class IRI="#MedicationAdministration"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Human"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.obolibrary.org/obo/COB_0000022"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                <ObjectUnionOf>
+                    <Class IRI="#HealthcareProvider"/>
+                    <Class IRI="#SubjectOfCare"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MedicationAdministration"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealthcareProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000513"/>
+                <Class IRI="#ProviderOrderEntry"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#subjectParticipantOf"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#HealthcareProvider"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#targetParticipantOf"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#SubjectOfCare"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SubjectOfCare"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealthcareActor"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#Human"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+                        <Class IRI="#MedicationAdministration"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#AdministrationEvent"/>
         <Class IRI="#HealthcareAdministration"/>
@@ -215,6 +329,10 @@
     <SubClassOf>
         <Class IRI="#Hospitalization"/>
         <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Human"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000022"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#IcdDescription"/>
@@ -302,7 +420,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProviderOrderEntry"/>
-        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000069"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProviderOrderEntryDetails"/>
@@ -311,6 +429,19 @@
     <SubClassOf>
         <Class IRI="#SubjectOfCare"/>
         <Class IRI="#HealthcareActor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SubjectOfCare"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#Human"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+                    <Class IRI="#MedicationAdministration"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#CPT"/>
@@ -468,6 +599,83 @@
         <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#NDC_symbol"/>
         <Class IRI="#NdcDescription"/>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Caregiver"/>
+        <Class IRI="#HealthcareProvider"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Caregiver"/>
+        <Class IRI="#SubjectOfCare"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HealthcareProfessional"/>
+        <Class IRI="#Provider"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HealthcareProvider"/>
+        <Class IRI="#SubjectOfCare"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002461"/>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002462"/>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002461"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002461"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#partnerOf"/>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#subjectParticipantOf"/>
+        <ObjectProperty IRI="#partnerOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#targetParticipantOf"/>
+        <ObjectProperty IRI="#partnerOf"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002461"/>
+        <ObjectProperty IRI="#partnerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002462"/>
+        <ObjectProperty IRI="#subjectParticipantOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+        <ObjectProperty IRI="#targetParticipantOf"/>
+    </InverseObjectProperties>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.obolibrary.org/obo/RO_0002461</IRI>
+        <Literal>partner in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000232"/>
+        <IRI>http://purl.obolibrary.org/obo/RO_0002462</IRI>
+        <Literal>Experimental: relation used for defining interaction relations; the meaning of s &apos;subject participant in&apos; p is determined by the type of p, where p must be a directional interaction process. For example, in a predator-prey interaction process the subject is the predator. We can imagine a reciprocal prey-predatory process with subject and object reversed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.obolibrary.org/obo/RO_0002462</IRI>
+        <Literal>subject participant in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000232"/>
+        <IRI>http://purl.obolibrary.org/obo/RO_0002463</IRI>
+        <Literal>Experimental: relation used for defining interaction relations; the meaning of s &apos;target participant in&apos; p is determined by the type of p, where p must be a directional interaction process. For example, in a predator-prey interaction process the target is the prey. We can imagine a reciprocal prey-predatory process with subject and object reversed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.obolibrary.org/obo/RO_0002463</IRI>
+        <Literal>target participant in</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#ClinicalProcess</IRI>
@@ -518,9 +726,24 @@
         <IRI>#SubjectOfCare</IRI>
         <Literal>ISO:13940</Literal>
     </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#partnerOf</IRI>
+        <Literal>partner of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#subjectParticipantOf</IRI>
+        <Literal>subject participant of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#targetParticipantOf</IRI>
+        <Literal>target participant of</Literal>
+    </AnnotationAssertion>
 </Ontology>
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
