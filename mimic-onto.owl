@@ -1,0 +1,526 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto">
+    <Prefix name="" IRI="http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl</Import>
+    <Import>http://purl.obolibrary.org/obo/cob/releases/2023-11-16/cob-full.owl</Import>
+    <Import>http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport</Import>
+    <Declaration>
+        <Class IRI="#AdministrationEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdministrationInputEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Admission"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BillableDiagnosis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Caregiver"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChartEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClinicalProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CptDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DrgDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GsnDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthRecord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthcareActor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthcareAdministration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthcareMandate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthcareProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthcareProfessional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthcareProvider"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HealthcareService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hospitalization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IcdDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IcuItemsDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IcuStaysInformation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LabItemsDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LabMeasurements"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MedicationAdministration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MedicineAdministrationRecord"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MedicineAdministrationRecordDetails"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MicrobiologyEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NdcDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Omr"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OutputEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PatientCareService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PatientTransfer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrescriptionAct"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrescriptionDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProcedureDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProcedureEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProcedureIcd"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Provider"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProviderOrderEntry"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProviderOrderEntryDetails"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SubjectOfCare"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AdministrationEvent"/>
+        <Class IRI="#HealthcareAdministration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdministrationInputEvent"/>
+        <Class IRI="#HealthcareAdministration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Admission"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BillableDiagnosis"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Caregiver"/>
+        <Class IRI="#HealthcareActor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChartEvent"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClinicalProcess"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CptDescription"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000102"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DrgDescription"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GsnDescription"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthRecord"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000101"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthcareAdministration"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthcareMandate"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000017"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthcareProcess"/>
+        <Class IRI="#ClinicalProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthcareProfessional"/>
+        <Class IRI="#HealthcareProvider"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthcareProvider"/>
+        <Class IRI="#HealthcareActor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthcareService"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hospitalization"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IcdDescription"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000062"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IcuItemsDescription"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IcuStaysInformation"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LabItemsDescription"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LabMeasurements"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MedicationAdministration"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MedicineAdministrationRecord"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MedicineAdministrationRecordDetails"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MicrobiologyEvent"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NdcDescription"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Omr"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000101"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutputEvent"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patient"/>
+        <Class IRI="#SubjectOfCare"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PatientCareService"/>
+        <Class IRI="#HealthcareService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PatientTransfer"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrescriptionAct"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrescriptionDescription"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000102"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProcedureDescription"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000102"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProcedureEvent"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProcedureIcd"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Provider"/>
+        <Class IRI="#HealthcareProvider"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProviderOrderEntry"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProviderOrderEntryDetails"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SubjectOfCare"/>
+        <Class IRI="#HealthcareActor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#CPT"/>
+        <Class IRI="#CptDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#CPT_identifier"/>
+        <Class IRI="#CptDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#CPT_symbol"/>
+        <Class IRI="#CptDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#DRG"/>
+        <Class IRI="#DrgDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#DRG_identifier"/>
+        <Class IRI="#DrgDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#DRG_symbol"/>
+        <Class IRI="#DrgDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#GSN"/>
+        <Class IRI="#GsnDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#GSN_identifier"/>
+        <Class IRI="#GsnDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#GSN_symbol"/>
+        <Class IRI="#GsnDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10"/>
+        <Class IRI="#BillableDiagnosis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10"/>
+        <Class IRI="#IcdDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10"/>
+        <Class IRI="#ProcedureDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10"/>
+        <Class IRI="#ProcedureIcd"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_diagnosis_identifier"/>
+        <Class IRI="#BillableDiagnosis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_diagnosis_identifier"/>
+        <Class IRI="#IcdDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_diagnosis_identifier"/>
+        <Class IRI="#ProcedureIcd"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_diagnosis_symbol"/>
+        <Class IRI="#BillableDiagnosis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_diagnosis_symbol"/>
+        <Class IRI="#IcdDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_diagnosis_symbol"/>
+        <Class IRI="#ProcedureIcd"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_procedures_identifier"/>
+        <Class IRI="#ProcedureDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_procedures_symbol"/>
+        <Class IRI="#ProcedureDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9"/>
+        <Class IRI="#BillableDiagnosis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9"/>
+        <Class IRI="#IcdDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9"/>
+        <Class IRI="#ProcedureDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9"/>
+        <Class IRI="#ProcedureIcd"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_diagnosis_identifier"/>
+        <Class IRI="#BillableDiagnosis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_diagnosis_identifier"/>
+        <Class IRI="#IcdDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_diagnosis_identifier"/>
+        <Class IRI="#ProcedureIcd"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_diagnosis_symbol"/>
+        <Class IRI="#BillableDiagnosis"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_diagnosis_symbol"/>
+        <Class IRI="#IcdDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_diagnosis_symbol"/>
+        <Class IRI="#ProcedureIcd"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_procedures_identifier"/>
+        <Class IRI="#ProcedureDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_procedures_symbol"/>
+        <Class IRI="#ProcedureDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#MIMICIVLabItems"/>
+        <Class IRI="#LabItemsDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#MIMICIV_lab_items_identifier"/>
+        <Class IRI="#LabItemsDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#MIMICIV_lab_items_symbol"/>
+        <Class IRI="#LabItemsDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#NDC"/>
+        <Class IRI="#NdcDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#NDC_identifier"/>
+        <Class IRI="#NdcDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#NDC_symbol"/>
+        <Class IRI="#NdcDescription"/>
+    </SubClassOf>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+        <IRI>#ClinicalProcess</IRI>
+        <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+        <IRI>#HealthRecord</IRI>
+        <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+        <IRI>#HealthcareActor</IRI>
+        <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+        <IRI>#HealthcareAdministration</IRI>
+        <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+        <IRI>#HealthcareMandate</IRI>
+        <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+        <IRI>#HealthcareProcess</IRI>
+        <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+        <IRI>#HealthcareProfessional</IRI>
+        <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+        <IRI>#HealthcareProvider</IRI>
+        <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+        <IRI>#HealthcareService</IRI>
+        <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
+        <IRI>#SubjectOfCare</IRI>
+        <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
