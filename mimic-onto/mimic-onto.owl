@@ -257,6 +257,19 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Omr"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.obolibrary.org/obo/COB_0000101"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#targetParticipantOf"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#SubjectOfCare"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#PatientCareService"/>
         <ObjectIntersectionOf>
             <Class IRI="#HealthcareService"/>
@@ -284,20 +297,26 @@
         <Class IRI="#SubjectOfCare"/>
         <ObjectIntersectionOf>
             <Class IRI="#HealthcareActor"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
-                <ObjectIntersectionOf>
-                    <Class IRI="#Human"/>
-                    <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
-                        <Class IRI="#MedicationAdministration"/>
-                    </ObjectSomeValuesFrom>
-                    <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
-                        <Class IRI="#PatientCareService"/>
-                    </ObjectSomeValuesFrom>
-                </ObjectIntersectionOf>
-            </ObjectSomeValuesFrom>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+                    <ObjectIntersectionOf>
+                        <Class IRI="#Human"/>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+                            <Class IRI="#MedicationAdministration"/>
+                        </ObjectSomeValuesFrom>
+                        <ObjectSomeValuesFrom>
+                            <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+                            <Class IRI="#PatientCareService"/>
+                        </ObjectSomeValuesFrom>
+                    </ObjectIntersectionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+                    <Class IRI="#Omr"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
