@@ -195,11 +195,11 @@
             <Class IRI="#HealthcareProcess"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000132"/>
-                <Class IRI="#IcuStaysInformation"/>
+                <Class IRI="#PatientCareService"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000132"/>
-                <Class IRI="#PatientCareService"/>
+                <ObjectProperty IRI="#subjectParticipantOf"/>
+                <Class IRI="#IcuStaysInformation"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -241,7 +241,7 @@
         <ObjectIntersectionOf>
             <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002462"/>
                 <Class IRI="#Admission"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
