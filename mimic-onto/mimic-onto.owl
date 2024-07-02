@@ -197,6 +197,13 @@
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000132"/>
                 <Class IRI="#PatientCareService"/>
             </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#targetParticipantOf"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#SubjectOfCare"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -311,6 +318,10 @@
                             <Class IRI="#PatientCareService"/>
                         </ObjectSomeValuesFrom>
                     </ObjectIntersectionOf>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+                    <Class IRI="#Admission"/>
                 </ObjectSomeValuesFrom>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
