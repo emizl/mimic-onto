@@ -206,7 +206,7 @@
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
-                </ObjectSomeValuesFrom
+                </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
