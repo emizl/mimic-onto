@@ -210,19 +210,19 @@
         <ObjectIntersectionOf>
             <Class IRI="#HealthcareProcess"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000132"/>
-                <Class IRI="#PatientCareService"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#subjectParticipantOf"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
                 <Class IRI="#IcuStaysInformation"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#targetParticipantOf"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
                 </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
+                <Class IRI="#PatientCareService"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -235,11 +235,11 @@
                 <ObjectIntersectionOf>
                     <Class IRI="#Human"/>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002462"/>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                         <Class IRI="#MedicationAdministration"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002462"/>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                         <Class IRI="#PatientCareService"/>
                     </ObjectSomeValuesFrom>
                 </ObjectIntersectionOf>
@@ -252,10 +252,11 @@
             <Class IRI="http://purl.obolibrary.org/obo/COB_0000022"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
-                <ObjectUnionOf>
-                    <Class IRI="#HealthcareProvider"/>
-                    <Class IRI="#SubjectOfCare"/>
-                </ObjectUnionOf>
+                <Class IRI="#HealthcareProvider"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                <Class IRI="#SubjectOfCare"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -264,12 +265,8 @@
         <ObjectIntersectionOf>
             <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002462"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                 <Class IRI="#Admission"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#targetParticipantOf"/>
-                <Class IRI="#SubjectOfCare"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -278,31 +275,18 @@
         <ObjectIntersectionOf>
             <Class IRI="#HealthcareProcess"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000513"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
                 <Class IRI="#ProviderOrderEntry"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#subjectParticipantOf"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#HealthcareProvider"/>
                 </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#targetParticipantOf"/>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
-                    <Class IRI="#SubjectOfCare"/>
-                </ObjectSomeValuesFrom>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#Omr"/>
-        <ObjectIntersectionOf>
-            <Class IRI="http://purl.obolibrary.org/obo/COB_0000101"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#targetParticipantOf"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
@@ -315,22 +299,32 @@
         <ObjectIntersectionOf>
             <Class IRI="#HealthcareService"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000117"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000047"/>
                 <Class IRI="#Admission"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#subjectParticipantOf"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#HealthcareProvider"/>
                 </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#targetParticipantOf"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
                 </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ProviderOrderEntry"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.obolibrary.org/obo/COB_0000069"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                <Class IRI="#MedicationAdministration"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -343,29 +337,25 @@
                 <ObjectIntersectionOf>
                     <Class IRI="#Human"/>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                         <Class IRI="#Admission"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
-                        <Class IRI="#IcuStaysInformation"/>
-                    </ObjectSomeValuesFrom>
-                    <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                         <Class IRI="#MedicationAdministration"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
-                        <Class IRI="#Omr"/>
-                    </ObjectSomeValuesFrom>
-                    <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                         <Class IRI="#PatientCareService"/>
                     </ObjectSomeValuesFrom>
                 </ObjectIntersectionOf>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000502"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000020"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000031"/>
@@ -717,20 +707,12 @@
     </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Caregiver"/>
-        <Class IRI="#HealthcareProvider"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Caregiver"/>
         <Class IRI="#SubjectOfCare"/>
     </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#HealthcareProfessional"/>
-        <Class IRI="#Provider"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#HealthcareProvider"/>
-        <Class IRI="#SubjectOfCare"/>
-    </DisjointClasses>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000056"/>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+    </EquivalentObjectProperties>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002461"/>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
@@ -866,5 +848,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
