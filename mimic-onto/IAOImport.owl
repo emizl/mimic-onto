@@ -45,21 +45,27 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000050 -->
+    <!-- http://purl.obolibrary.org/obo/COB_0000047 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/COB_0000047">
+        <rdfs:label>has part</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+    <!-- http://purl.obolibrary.org/obo/COB_0000072 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/COB_0000072">
+        <rdfs:label>part of</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000219 -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000219"/>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000219">
+        <rdfs:label>denotes</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -86,7 +92,9 @@
 
     <!-- http://purl.obolibrary.org/obo/IAO_0000030 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030">
+        <rdfs:label xml:lang="en">information content entity</rdfs:label>
+    </owl:Class>
     
 
 
@@ -148,7 +156,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000579"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#CPT_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -169,11 +177,11 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#CPT_symbol"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -198,7 +206,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000577"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000072"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#CPT_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -218,7 +226,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000579"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#DRG_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -238,11 +246,11 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#DRG_symbol"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -267,7 +275,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000577"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000072"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#DRG_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -287,7 +295,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000579"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#GSN_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -308,11 +316,11 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#GSN_symbol"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -337,7 +345,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000577"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000072"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#GSN_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -357,7 +365,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000579"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:unionOf rdf:parseType="Collection">
@@ -384,11 +392,11 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_diagnosis_symbol"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -413,7 +421,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000577"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000072"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_diagnosis_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -433,11 +441,11 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_procedures_symbol"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -462,7 +470,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000577"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000072"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_procedures_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -482,7 +490,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000579"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:unionOf rdf:parseType="Collection">
@@ -509,11 +517,11 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_diagnosis_symbol"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -538,7 +546,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000577"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000072"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_diagnosis_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -558,11 +566,11 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_procedures_symbol"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -587,7 +595,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000577"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000072"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_procedures_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -607,7 +615,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000579"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#MIMICIV_lab_items_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -627,11 +635,11 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#MIMICIV_lab_items_symbol"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -656,7 +664,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000577"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000072"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#MIMICIV_lab_items_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -676,7 +684,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000579"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#NDC_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -697,11 +705,11 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000578"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#NDC_symbol"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
                         <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000219"/>
@@ -726,7 +734,7 @@
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000577"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000072"/>
                         <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#NDC_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
@@ -774,5 +782,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
