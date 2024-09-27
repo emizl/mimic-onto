@@ -463,11 +463,11 @@
                         <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                         <Class IRI="#PatientCareService"/>
                     </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
+                        <Class IRI="#BillableDiagnosis"/>
+                    </ObjectSomeValuesFrom>
                 </ObjectIntersectionOf>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
-                <Class IRI="#BillableDiagnosis"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
