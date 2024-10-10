@@ -211,6 +211,10 @@
             <Class IRI="#HealthcareProcess"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <Class IRI="#BillableDiagnosis"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
                 <Class IRI="#IcuStaysInformation"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
@@ -222,7 +226,7 @@
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
-                <Class IRI="#BillableDiagnosis"/>
+                <Class IRI="#Hospitalization"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
@@ -239,7 +243,7 @@
         <ObjectIntersectionOf>
             <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000047"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                 <Class IRI="#Admission"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
@@ -513,13 +517,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ChartEvent"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#HealthcareProcess"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
-                <Class IRI="#IcuItemsDescription"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
+        <Class IRI="#HealthcareProcess"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ClinicalProcess"/>
@@ -621,7 +619,20 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MedicationAdministration"/>
-        <Class IRI="#HealthcareProcess"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealthcareProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <Class IRI="#Admission"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#SubjectOfCare"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MedicineAdministrationRecord"/>
@@ -641,13 +652,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#OutputEvent"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#HealthcareProcess"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
-                <Class IRI="#IcuItemsDescription"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
+        <Class IRI="#HealthcareProcess"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Patient"/>
@@ -675,13 +680,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProcedureEvent"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#HealthcareProcess"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
-                <Class IRI="#IcuItemsDescription"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
+        <Class IRI="#HealthcareProcess"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProcedureIcd"/>
