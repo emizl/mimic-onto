@@ -76,6 +76,9 @@
         <Class IRI="#HealthcareMandate"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#HealthcareOrganization"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#HealthcareProcess"/>
     </Declaration>
     <Declaration>
@@ -127,6 +130,9 @@
         <Class IRI="#Omr"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#OrganizationalRole"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#OutputEvent"/>
     </Declaration>
     <Declaration>
@@ -152,9 +158,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#ProcedureIcd"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Provider"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ProviderOrderEntry"/>
@@ -211,6 +214,10 @@
             <Class IRI="#HealthcareProcess"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <Class IRI="#BillableDiagnosis"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
                 <Class IRI="#IcuStaysInformation"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
@@ -222,7 +229,7 @@
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
-                <Class IRI="#BillableDiagnosis"/>
+                <Class IRI="#Hospitalization"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
@@ -239,7 +246,7 @@
         <ObjectIntersectionOf>
             <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000047"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                 <Class IRI="#Admission"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
@@ -266,22 +273,46 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#HealthcareProvider"/>
+        <Class IRI="#HealthcareAdministration"/>
         <ObjectIntersectionOf>
-            <Class IRI="#HealthcareActor"/>
+            <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <Class IRI="#IcuItemsDescription"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HealthcareProfessional"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealthcareProvider"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
-                <ObjectIntersectionOf>
-                    <Class IRI="#Human"/>
-                    <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
-                        <Class IRI="#MedicationAdministration"/>
-                    </ObjectSomeValuesFrom>
-                    <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
-                        <Class IRI="#PatientCareService"/>
-                    </ObjectSomeValuesFrom>
-                </ObjectIntersectionOf>
+                <Class IRI="#Human"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HealthcareProvider"/>
+        <ObjectUnionOf>
+            <Class IRI="#HealthcareProfessional"/>
+            <Class IRI="#HealthcareProvider"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Hospitalization"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealthcareProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000047"/>
+                <Class IRI="#Admission"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#SubjectOfCare"/>
+                </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -289,6 +320,10 @@
         <Class IRI="#Human"/>
         <ObjectIntersectionOf>
             <Class IRI="http://purl.obolibrary.org/obo/COB_0000022"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                <Class IRI="#Caregiver"/>
+            </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                 <Class IRI="#HealthcareProvider"/>
@@ -453,6 +488,10 @@
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
                         <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <Class IRI="#Hospitalization"/>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                         <Class IRI="#LabMeasurements"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
@@ -463,11 +502,11 @@
                         <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                         <Class IRI="#PatientCareService"/>
                     </ObjectSomeValuesFrom>
-                    <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
-                        <Class IRI="#BillableDiagnosis"/>
-                    </ObjectSomeValuesFrom>
                 </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
+                <Class IRI="#BillableDiagnosis"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -481,23 +520,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AdministrationEvent"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#HealthcareAdministration"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
-                <Class IRI="#IcuItemsDescription"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
+        <Class IRI="#HealthcareAdministration"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AdministrationInputEvent"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#HealthcareAdministration"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
-                <Class IRI="#IcuItemsDescription"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
+        <Class IRI="#HealthcareAdministration"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Admission"/>
@@ -513,13 +540,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ChartEvent"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#HealthcareProcess"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
-                <Class IRI="#IcuItemsDescription"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
+        <Class IRI="#HealthcareProcess"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ClinicalProcess"/>
@@ -552,6 +573,14 @@
     <SubClassOf>
         <Class IRI="#HealthcareMandate"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000017"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthcareOrganization"/>
+        <Class IRI="#HealthcareProvider"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HealthcareOrganization"/>
+        <Class IRI="#OrganizationalRole"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HealthcareProcess"/>
@@ -620,10 +649,6 @@
         <Class IRI="#HealthcareProcess"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MedicationAdministration"/>
-        <Class IRI="#HealthcareProcess"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#MedicineAdministrationRecord"/>
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
     </SubClassOf>
@@ -640,14 +665,12 @@
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#OrganizationalRole"/>
+        <Class IRI="http://purl.obolibrary.org/obo/BFO_0000023"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#OutputEvent"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#HealthcareProcess"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
-                <Class IRI="#IcuItemsDescription"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
+        <Class IRI="#HealthcareProcess"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Patient"/>
@@ -675,21 +698,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProcedureEvent"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#HealthcareProcess"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
-                <Class IRI="#IcuItemsDescription"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
+        <Class IRI="#HealthcareProcess"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProcedureIcd"/>
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Provider"/>
-        <Class IRI="#HealthcareProvider"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProviderOrderEntry"/>
@@ -860,9 +873,18 @@
         <Class IRI="#NdcDescription"/>
     </SubClassOf>
     <DisjointClasses>
+        <Class IRI="#AdministrationEvent"/>
+        <Class IRI="#AdministrationInputEvent"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Caregiver"/>
         <Class IRI="#SubjectOfCare"/>
     </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#HealthcareProvider"/>
+        <Class IRI="#SubjectOfCare"/>
+    </DisjointClasses>
+    <DifferentIndividuals/>
     <EquivalentObjectProperties>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000056"/>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
@@ -945,6 +967,11 @@
         <Literal>target participant in</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Caregiver</IRI>
+        <Literal>ISO 13940:2015 (ContSYS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#ClinicalProcess</IRI>
         <Literal>ISO:13940</Literal>
@@ -960,6 +987,11 @@
         <Literal>ISO:13940</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#HealthcareActor</IRI>
+        <Literal>ISO 13940:2015 (ContSYS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#HealthcareAdministration</IRI>
         <Literal>ISO:13940</Literal>
@@ -968,6 +1000,21 @@
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#HealthcareMandate</IRI>
         <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#HealthcareMandate</IRI>
+        <Literal>ISO 13940:2015 (ContSYS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#HealthcareOrganization</IRI>
+        <Literal>ISO 13940:2015 (ContSYS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HealthcareOrganization</IRI>
+        <Literal>Healthcare organization</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
@@ -980,6 +1027,11 @@
         <Literal>ISO:13940</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#HealthcareProfessional</IRI>
+        <Literal>ISO 13940:2015 (ContSYS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#HealthcareProvider</IRI>
         <Literal>ISO:13940</Literal>
@@ -990,9 +1042,29 @@
         <Literal>ISO:13940</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#OrganizationalRole</IRI>
+        <Literal>ISO 13940:2015 (ContSYS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OrganizationalRole</IRI>
+        <Literal>Organizational role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#Patient</IRI>
+        <Literal>ISO 13940:2015 (ContSYS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#SubjectOfCare</IRI>
         <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>#SubjectOfCare</IRI>
+        <Literal>ISO 13940:2015 (ContSYS)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1013,5 +1085,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
