@@ -4,11 +4,11 @@
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/cob/releases/2023-11-16/cob-full.owl" uri="cob-full.owl"/>
     <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport" uri="IAOImport.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1728563681523" name="duplicate:http://purl.obolibrary.org/obo/bfo/" uri="bfo-core%20(1).owl"/>
-        <uri id="Automatically generated entry, Timestamp=1728563681523" name="duplicate:http://purl.obolibrary.org/obo/bfo/" uri="bfo-core.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1728563681523" name="http://purl.obolibrary.org/obo/cob/cob-full.owl" uri="cob-full.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1728563681523" name="http://purl.obolibrary.org/obo/ro.owl" uri="ro.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1728563681523" name="http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto" uri="mimic-onto.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1728563681523" name="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport/" uri="IAOImport.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1728569242916" name="duplicate:http://purl.obolibrary.org/obo/bfo/" uri="bfo-core.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1728569242916" name="duplicate:http://purl.obolibrary.org/obo/bfo/" uri="bfo-core%20(1).owl"/>
+        <uri id="Automatically generated entry, Timestamp=1728569242916" name="http://purl.obolibrary.org/obo/cob/cob-full.owl" uri="cob-full.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1728569242916" name="http://purl.obolibrary.org/obo/ro.owl" uri="ro.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1728569242916" name="http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto" uri="mimic-onto.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1728569242916" name="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport/" uri="IAOImport.owl"/>
     </group>
 </catalog>
