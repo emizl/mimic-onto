@@ -16,6 +16,9 @@
     <Import>http://purl.obolibrary.org/obo/cob/releases/2023-11-16/cob-full.owl</Import>
     <Import>http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport</Import>
     <Declaration>
+        <Class IRI="DateTimeEvent"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000017"/>
     </Declaration>
     <Declaration>
@@ -50,6 +53,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#ChartEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChartTime"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ClinicalProcess"/>
@@ -166,6 +172,9 @@
         <Class IRI="#ProviderOrderEntryDetails"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#StoreTime"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#SubjectOfCare"/>
     </Declaration>
     <Declaration>
@@ -176,6 +185,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDuration"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#partnerOf"/>
@@ -192,6 +204,20 @@
     <Declaration>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="DateTimeEvent"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasDuration"/>
+                <Class IRI="#ChartTime"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasDuration"/>
+                <Class IRI="#StoreTime"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
@@ -561,6 +587,10 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
+        <Class IRI="DateTimeEvent"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000502"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000020"/>
     </SubClassOf>
@@ -591,6 +621,17 @@
     <SubClassOf>
         <Class IRI="#ChartEvent"/>
         <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChartTime"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000416"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChartTime"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000413"/>
+            <Class IRI="DateTimeEvent"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ClinicalProcess"/>
@@ -765,6 +806,17 @@
     <SubClassOf>
         <Class IRI="#ProviderOrderEntryDetails"/>
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StoreTime"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000416"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StoreTime"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000413"/>
+            <Class IRI="DateTimeEvent"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#SubjectOfCare"/>
@@ -976,6 +1028,10 @@
         <ObjectProperty IRI="#partnerOf"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/IAO_0000413"/>
+        <ObjectProperty IRI="#hasDuration"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002461"/>
         <ObjectProperty IRI="#partnerOf"/>
     </InverseObjectProperties>
@@ -990,6 +1046,19 @@
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000513"/>
     </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDuration"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDuration"/>
+        <Class IRI="http://purl.obolibrary.org/obo/IAO_0000416"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DateTimeEvent</IRI>
+        <Literal>date time event</Literal>
+    </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://purl.obolibrary.org/obo/IAO_0000030</IRI>
@@ -1039,6 +1108,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#ChartEvent</IRI>
         <Literal>chart event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ChartTime</IRI>
+        <Literal>chart time</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
@@ -1196,6 +1270,11 @@
         <Literal>procedure event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#StoreTime</IRI>
+        <Literal>store time</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#SubjectOfCare</IRI>
         <Literal>ISO:13940</Literal>
@@ -1209,6 +1288,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#SubjectOfCare</IRI>
         <Literal>subject of care</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasDuration</IRI>
+        <Literal>has duration</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1229,5 +1313,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
