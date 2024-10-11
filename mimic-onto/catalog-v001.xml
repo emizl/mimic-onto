@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/cob/releases/2023-11-16/cob-full.owl" uri="cob-full.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport" uri="IAOImport.owl"/>
+</catalog>
