@@ -243,6 +243,10 @@
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
                 <Class IRI="#PatientCareService"/>
             </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
+                <Class IRI="#PatientTransfer"/>
+            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -472,6 +476,23 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#PatientTransfer"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealthcareProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000047"/>
+                <Class IRI="#Admission"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#SubjectOfCare"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#ProviderOrderEntry"/>
         <ObjectIntersectionOf>
             <Class IRI="http://purl.obolibrary.org/obo/COB_0000069"/>
@@ -526,6 +547,10 @@
                     <ObjectSomeValuesFrom>
                         <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                         <Class IRI="#PatientCareService"/>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <Class IRI="#PatientTransfer"/>
                     </ObjectSomeValuesFrom>
                 </ObjectIntersectionOf>
             </ObjectSomeValuesFrom>
@@ -671,6 +696,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#LabMeasurements"/>
+        <Class IRI="#HealthcareProcess"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MedicationAdministration"/>
         <Class IRI="#HealthcareProcess"/>
     </SubClassOf>
     <SubClassOf>
@@ -992,9 +1021,24 @@
         <Literal>target participant in</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Admission</IRI>
+        <Literal>admission</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#Caregiver</IRI>
         <Literal>ISO 13940:2015 (ContSYS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Caregiver</IRI>
+        <Literal>caregiver</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ChartEvent</IRI>
+        <Literal>chart event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
@@ -1022,6 +1066,11 @@
         <Literal>ISO:13940</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HealthcareAdministration</IRI>
+        <Literal>healthcare administration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#HealthcareMandate</IRI>
         <Literal>ISO:13940</Literal>
@@ -1039,7 +1088,7 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#HealthcareOrganization</IRI>
-        <Literal>Healthcare organization</Literal>
+        <Literal>healthcare organization</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
@@ -1047,6 +1096,11 @@
         <Literal>ISO:13940</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HealthcareProcess</IRI>
+        <Literal>healthcare process</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#HealthcareProfessional</IRI>
         <Literal>ISO:13940</Literal>
@@ -1057,14 +1111,49 @@
         <Literal>ISO 13940:2015 (ContSYS)</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HealthcareProfessional</IRI>
+        <Literal>healthcare professional</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#HealthcareProvider</IRI>
         <Literal>ISO:13940</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HealthcareProvider</IRI>
+        <Literal>healthcare provider</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
         <IRI>#HealthcareService</IRI>
         <Literal>ISO:13940</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#HealthcareService</IRI>
+        <Literal>healthcare service</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Hospitalization</IRI>
+        <Literal>hospitalization</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LabMeasurements</IRI>
+        <Literal>lab measurement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MedicationAdministration</IRI>
+        <Literal>medication administration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MicrobiologyEvent</IRI>
+        <Literal>microbiology event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
@@ -1074,12 +1163,37 @@
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>#OrganizationalRole</IRI>
-        <Literal>Organizational role</Literal>
+        <Literal>organizational role</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OutputEvent</IRI>
+        <Literal>output event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#Patient</IRI>
         <Literal>ISO 13940:2015 (ContSYS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Patient</IRI>
+        <Literal>patient</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PatientTransfer</IRI>
+        <Literal>patient transfer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PrescriptionAct</IRI>
+        <Literal>prescription act</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#ProcedureEvent</IRI>
+        <Literal>procedure event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
@@ -1090,6 +1204,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
         <IRI>#SubjectOfCare</IRI>
         <Literal>ISO 13940:2015 (ContSYS)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SubjectOfCare</IRI>
+        <Literal>subject of care</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
