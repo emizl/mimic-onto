@@ -16,9 +16,6 @@
     <Import>http://purl.obolibrary.org/obo/cob/releases/2023-11-16/cob-full.owl</Import>
     <Import>http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport</Import>
     <Declaration>
-        <Class IRI="DateTimeEvent"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000017"/>
     </Declaration>
     <Declaration>
@@ -35,6 +32,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000102"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="DateTimeEvent"/>
     </Declaration>
     <Declaration>
         <Class IRI="#AdministrationEvent"/>
@@ -205,20 +205,6 @@
         <AnnotationProperty IRI="http://purl.obolibrary.org/obo/IAO_0000412"/>
     </Declaration>
     <EquivalentClasses>
-        <Class IRI="DateTimeEvent"/>
-        <ObjectIntersectionOf>
-            <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasDuration"/>
-                <Class IRI="#ChartTime"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#hasDuration"/>
-                <Class IRI="#StoreTime"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000015"/>
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
     </EquivalentClasses>
@@ -233,6 +219,20 @@
     <EquivalentClasses>
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="DateTimeEvent"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasDuration"/>
+                <Class IRI="#ChartTime"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasDuration"/>
+                <Class IRI="#StoreTime"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Admission"/>
@@ -273,6 +273,10 @@
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
                 <Class IRI="#PatientTransfer"/>
             </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
+                <Class IRI="#ProcedureEvent"/>
+            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -293,6 +297,16 @@
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
                 </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Caregiver"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealthcareActor"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                <Class IRI="#ProcedureEvent"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -385,6 +399,10 @@
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                 <Class IRI="#Admission"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                <Class IRI="#ProcedureEvent"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -519,6 +537,38 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#ProcedureEvent"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealthcareProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000047"/>
+                <Class IRI="#Admission"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <Class IRI="#IcuItemsDescription"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <Class IRI="#IcuStaysInformation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#Caregiver"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#SubjectOfCare"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#ProviderOrderEntry"/>
         <ObjectIntersectionOf>
             <Class IRI="http://purl.obolibrary.org/obo/COB_0000069"/>
@@ -578,6 +628,10 @@
                         <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                         <Class IRI="#PatientTransfer"/>
                     </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <Class IRI="#ProcedureEvent"/>
+                    </ObjectSomeValuesFrom>
                 </ObjectIntersectionOf>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
@@ -587,16 +641,16 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
-        <Class IRI="DateTimeEvent"/>
-        <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000502"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000020"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="http://purl.obolibrary.org/obo/IAO_0000030"/>
         <Class IRI="http://purl.obolibrary.org/obo/BFO_0000031"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="DateTimeEvent"/>
+        <Class IRI="http://purl.obolibrary.org/obo/COB_0000034"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AdministrationEvent"/>
@@ -1056,11 +1110,6 @@
     </ObjectPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>DateTimeEvent</IRI>
-        <Literal>date time event</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://purl.obolibrary.org/obo/IAO_0000030</IRI>
         <Literal xml:lang="en">information content entity</Literal>
     </AnnotationAssertion>
@@ -1088,6 +1137,11 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://purl.obolibrary.org/obo/RO_0002463</IRI>
         <Literal>target participant in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>DateTimeEvent</IRI>
+        <Literal>date time event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
