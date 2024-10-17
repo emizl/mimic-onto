@@ -187,6 +187,18 @@
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasAgent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isAgentIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasDuration"/>
     </Declaration>
     <Declaration>
@@ -251,14 +263,14 @@
                 <Class IRI="#IcuStaysInformation"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasAgent"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#Caregiver"/>
                 </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
@@ -277,13 +289,6 @@
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
                 <Class IRI="#IcuStaysInformation"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
-                    <Class IRI="#SubjectOfCare"/>
-                </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
@@ -313,6 +318,13 @@
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
                 <Class IRI="#ProcedureEvent"/>
             </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#SubjectOfCare"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
@@ -341,12 +353,18 @@
         <ObjectIntersectionOf>
             <Class IRI="#HealthcareActor"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
-                <Class IRI="#AdministrationEvent"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
-                <Class IRI="#ProcedureEvent"/>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000197"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#Human"/>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isAgentIn"/>
+                        <Class IRI="#AdministrationEvent"/>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isAgentIn"/>
+                        <Class IRI="#ProcedureEvent"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectIntersectionOf>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -396,7 +414,7 @@
                 <Class IRI="#Admission"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
@@ -429,6 +447,32 @@
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
                 <Class IRI="#BillableDiagnosis"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#IcuItemsDescription"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                <Class IRI="#AdministrationEvent"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                <Class IRI="#AdministrationInputEvent"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                <Class IRI="#ChartEvent"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                <Class IRI="#OutputEvent"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                <Class IRI="#ProcedureEvent"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -473,7 +517,7 @@
                 <Class IRI="#LabItemsDescription"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
@@ -490,14 +534,14 @@
                 <Class IRI="#ProviderOrderEntry"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasAgent"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#HealthcareProvider"/>
                 </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
@@ -514,7 +558,7 @@
                 <Class IRI="#Admission"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
@@ -548,14 +592,14 @@
                 <Class IRI="#Admission"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasAgent"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#HealthcareProvider"/>
                 </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
@@ -572,7 +616,7 @@
                 <Class IRI="#Admission"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
@@ -597,14 +641,14 @@
                 <Class IRI="#IcuStaysInformation"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasAgent"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#Caregiver"/>
                 </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
                 <ObjectSomeValuesFrom>
                     <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
                     <Class IRI="#SubjectOfCare"/>
@@ -645,39 +689,39 @@
                 <ObjectIntersectionOf>
                     <Class IRI="#Human"/>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
                         <Class IRI="#AdministrationEvent"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
                         <Class IRI="#Admission"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
                         <Class IRI="#Hospitalization"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
                         <Class IRI="#LabMeasurements"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
                         <Class IRI="#MedicationAdministration"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
                         <Class IRI="#MicrobiologyEvent"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
                         <Class IRI="#PatientCareService"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
                         <Class IRI="#PatientTransfer"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
-                        <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
                         <Class IRI="#ProcedureEvent"/>
                     </ObjectSomeValuesFrom>
                 </ObjectIntersectionOf>
@@ -802,32 +846,6 @@
     <SubClassOf>
         <Class IRI="#IcdDescription"/>
         <Class IRI="http://purl.obolibrary.org/obo/COB_0000062"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#IcuItemsDescription"/>
-        <ObjectIntersectionOf>
-            <Class IRI="http://purl.obolibrary.org/obo/COB_0000061"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
-                <Class IRI="#AdministrationEvent"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
-                <Class IRI="#AdministrationInputEvent"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
-                <Class IRI="#ChartEvent"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
-                <Class IRI="#OutputEvent"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
-                <Class IRI="#ProcedureEvent"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#IcuStaysInformation"/>
@@ -1084,14 +1102,6 @@
         <Class IRI="#AdministrationEvent"/>
         <Class IRI="#AdministrationInputEvent"/>
     </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Caregiver"/>
-        <Class IRI="#SubjectOfCare"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#HealthcareProvider"/>
-        <Class IRI="#SubjectOfCare"/>
-    </DisjointClasses>
     <DifferentIndividuals/>
     <EquivalentObjectProperties>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000056"/>
@@ -1116,6 +1126,22 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002463"/>
         <ObjectProperty IRI="http://purl.obolibrary.org/obo/RO_0002461"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasAgent"/>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000057"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000057"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isAgentIn"/>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000056"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
+        <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000056"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#partnerOf"/>
@@ -1185,6 +1211,56 @@
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
         <IRI>http://purl.obolibrary.org/obo/RO_0002463</IRI>
         <Literal>target participant in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/biotop/btl2.owl#hasAgent</IRI>
+        <Literal>has agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>http://purl.org/biotop/btl2.owl#hasAgent</IRI>
+        <Literal>agentIn (inverse: hasAgent) relates a participant with a process, with the condition that this participant is causally active in the relevant process.
+This is the reason why agentIn is subsumed by the relation causedBy. 
+
+Example: A physician is the agent in a operation process; a solvent is the agent in a solving process. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/biotop/btl2.owl#hasPatient</IRI>
+        <Literal>has patient</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>http://purl.org/biotop/btl2.owl#hasPatient</IRI>
+        <Literal>patientIn (inverse: hasPatient) relates a participant with a process, with the condition that that this participant is not causally active.  
+
+Example: A prey is the patient in a hunting process; a solute is the patient in a solving process. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/biotop/btl2.owl#isAgentIn</IRI>
+        <Literal>is agent in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>http://purl.org/biotop/btl2.owl#isAgentIn</IRI>
+        <Literal>agentIn (inverse: hasAgent) relates a participant with a process, with the condition that this participant is causally active in the relevant process.
+This is the reason why agentIn is subsumed by the relation causedBy. 
+
+Example: A physician is the agent in a operation process; a solvent is the agent in a solving process. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/biotop/btl2.owl#isPatientIn</IRI>
+        <Literal>is patient in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#definition"/>
+        <IRI>http://purl.org/biotop/btl2.owl#isPatientIn</IRI>
+        <Literal>patientIn (inverse: hasPatient) relates a participant with a process, with the condition that that this participant is not causally active.  
+
+Example: A prey is the patient in a hunting process; a solute is the patient in a solving process. </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -1415,5 +1491,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
 
