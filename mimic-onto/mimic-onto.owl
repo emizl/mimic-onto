@@ -316,6 +316,10 @@
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
+                <Class IRI="#OutputEvent"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
                 <Class IRI="#PatientCareService"/>
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
@@ -371,6 +375,10 @@
                     <ObjectSomeValuesFrom>
                         <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isAgentIn"/>
                         <Class IRI="#ChartEvent"/>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isAgentIn"/>
+                        <Class IRI="#OutputEvent"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
                         <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isAgentIn"/>
@@ -538,6 +546,10 @@
             </ObjectSomeValuesFrom>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
+                <Class IRI="#OutputEvent"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000024"/>
                 <Class IRI="#ProcedureEvent"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
@@ -628,6 +640,38 @@
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000072"/>
                 <Class IRI="#HealthRecord"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OutputEvent"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#HealthcareProcess"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000047"/>
+                <Class IRI="#Admission"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <Class IRI="#IcuItemsDescription"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.obolibrary.org/obo/COB_0000070"/>
+                <Class IRI="#IcuStaysInformation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasAgent"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#Caregiver"/>
+                </ObjectSomeValuesFrom>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#hasPatient"/>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="http://purl.obolibrary.org/obo/BFO_0000196"/>
+                    <Class IRI="#SubjectOfCare"/>
+                </ObjectSomeValuesFrom>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -780,6 +824,10 @@
                     <ObjectSomeValuesFrom>
                         <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
                         <Class IRI="#MicrobiologyEvent"/>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
+                        <Class IRI="#OutputEvent"/>
                     </ObjectSomeValuesFrom>
                     <ObjectSomeValuesFrom>
                         <ObjectProperty IRI="http://purl.org/biotop/btl2.owl#isPatientIn"/>
