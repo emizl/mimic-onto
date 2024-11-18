@@ -569,14 +569,11 @@
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000579"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_diagnosis_identifier"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_procedures_identifier"/>
-                                </owl:unionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_diagnosis_identifier"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10_procedures_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -694,14 +691,11 @@
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000579"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_diagnosis_identifier"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_procedures_identifier"/>
-                                </owl:unionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_diagnosis_identifier"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/COB_0000047"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_9_procedures_identifier"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
