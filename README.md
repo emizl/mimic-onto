@@ -9,7 +9,6 @@ Este repositório contém uma ontologia desenvolvida para representar semanticam
 - `bfo-core.owl`: Arquivo da ontologia BFO.
 - `cob-full.owl`: Arquivo da ontologia COB.
 - `mimic-onto.obda`: Arquivo de mapeamento para integrar a ontologia com o banco de dados relacional.
-- `queries/`: Pasta contendo exemplos de consultas SPARQL.
 
 ## Requisitos
 
@@ -36,13 +35,13 @@ Para testar e explorar esta ontologia, você precisará:
    - Acesse `Ontop Mapping Manager` e clique em `Data Source Configuration`.
    - Preencha as informações da conexão:
      - **JDBC Driver**: MySQL (ou o driver apropriado para a sua versão do mimic-iv).
-     - **JDBC URL**: `jdbc:postgresql://<seu-host>:<porta>/<seu-banco>`.
+     - **JDBC URL**: `jdbc:mysql://<seu-host>:<porta>/<seu-banco>`.
      - **Username** e **Password**: Insira as credenciais do banco de dados.
 3. **Coloque o arquivo .obda na mesma pasta e habilite a aba OntopMappings. Lá deve aparecer os mapeamentos.**
 
 4. **Executando Consultas SPARQL**:
    - Vá para a aba `Ontop SPARQL` no Protégé.
-   - Carregue uma das consultas da pasta `queries/` ou insira manualmente.
+   - Carregue uma das consultas listadas.
    - Clique em `Execute` para visualizar os resultados.
 
 ### Exemplos de Consultas
@@ -54,3 +53,31 @@ Para testar e explorar esta ontologia, você precisará:
      ?patient a :SubjectOfCare ;
               :hasDiagnosis ?diagnosis .
    }
+    ```
+1. **Quais são os pacientes que, ao participar de uma admissão, realizaram exames laboratoriais?**:
+   ```sparql
+   PREFIX : <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#>
+   PREFIX btl2: <http://purl.org/biotop/btl2.owl#>
+   PREFIX iao: <http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#>
+   PREFIX cob: <http://purl.obolibrary.org/obo/COB_>
+   SELECT DISTINCT ?patient WHERE { 
+     ?admission a :Admission ;
+          cob:0000072 ?lab . 
+        ?lab a :LabMeasurements . 
+     ?patient a :SubjectOfCare ;
+        btl2:isPatientIn ?admission .
+   } 
+
+
+3. **Quais são as medicações solicitadas numa prescrição e declaradas na POE?**:
+   ```sparql
+   PREFIX : <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#>
+   PREFIX btl2: <http://purl.org/biotop/btl2.owl#>
+   PREFIX cob: <http://purl.obolibrary.org/obo/COB_>
+   SELECT DISTINCT ?medication ?prescription ?poe WHERE {
+      ?prescription a :PrescriptionAct ;
+                cob:0000070 ?poe ;
+                cob:0000047 ?medication .
+      ?medication a :MedicationAdministration .
+      ?poe a :ProviderOrderEntry .
+   } 
