@@ -15,7 +15,7 @@ Este repositório contém uma ontologia desenvolvida para representar semanticam
 Para testar e explorar esta ontologia, você precisará:
 
 1. **Protégé com Ontop Plugin**: O Protégé é uma ferramenta para edição e exploração de ontologias. O plugin Ontop permite conectar a ontologia com o banco de dados e executar consultas SPARQL.
-   - Faça o download do Protégé: [Protégé](https://protegeproject.github.io/). Eu utilizei a versão 5.6.1
+   - Faça o download do Protégé: [Protégé](https://protege.stanford.edu/). Eu utilizei a versão 5.6.1
    - Instale o plugin Ontop diretamente no Protégé (disponível no menu de plugins).
 2. **Banco de Dados MIMIC-IV**: Certifique-se de ter acesso ao banco de dados MIMIC-IV devidamente configurado.
 3. **Java**: Uma versão recente para suportar o Protégé e o plugin Ontop.
