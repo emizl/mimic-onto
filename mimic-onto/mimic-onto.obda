@@ -1,0 +1,69 @@
+[PrefixDeclaration]
+:		http://example.org/voc#
+ex:		http://example.org/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+foaf:		http://xmlns.com/foaf/0.1/
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[MappingDeclaration] @collection [[
+mappingId	map-patient
+target		ex:mimic4/patients/{SUBJECT_ID} a <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#SubjectOfCare> . 
+source		select * from patients
+
+mappingId	map-patient-billable
+target		ex:mimic4/patients/{SUBJECT_ID} <http://purl.obolibrary.org/obo/COB_0000072> ex:mimic4/diagnoses_icd/{ICD_CODE}/{SUBJECT_ID}/ . 
+source		SELECT subject_id, icd_code FROM diagnoses_icd where icd_code = '0020'
+
+mappingId	map-billable-cid
+target		ex:mimic4/diagnoses_icd/{ICD_CODE}/{SUBJECT_ID}/ a <http://www.semanticweb.org/filipesantana/ontologies/2024/2/IAOimport#ICD_10> . 
+source		SELECT subject_id, icd_code FROM diagnoses_icd where icd_code = '0020'
+
+mappingId	procedureIcd
+target		ex:mimic4/procedures_icd/{subject_id}{hadm_id}{icd_code} a <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#ProcedureIcd> ; <http://purl.obolibrary.org/obo/COB_0000024> ex:mimic4/admissions/{hadm_id} ; <http://purl.obolibrary.org/obo/COB_0000047> ex:mimic4/patients/{subject_id} . 
+source		select icd_code, subject_id, hadm_id from procedures_icd where icd_code = '0BH17EZ'
+
+mappingId	map-patient-procedure
+target		ex:mimic4/patients/{SUBJECT_ID} <http://purl.obolibrary.org/obo/COB_0000072> ex:mimic4/procedures_icd/{SUBJECT_ID}{HADM_ID}{ICD_CODE}/ . 
+source		select subject_id, icd_code, hadm_id from procedures_icd where icd_code = '0BH17EZ'
+
+mappingId	adm
+target		ex:mimic4/admissions/{hadm_id} a <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#Admission> ; <http://purl.org/biotop/btl2.owl#hasPatient> ex:mimic4/patients/{subject_id} . 
+source		SELECT hadm_id, subject_id FROM admissions
+
+mappingId	labmeasure
+target		ex:mimic4/labevents/{labevent_id} a <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#LabMeasurements> ; <http://purl.org/biotop/btl2.owl#hasPatient> ex:mimic4/patients/{subject_id} . 
+source		SELECT labevent_id, subject_id FROM labevents
+
+mappingId	map-pat-adm
+target		ex:mimic4/patients/{SUBJECT_ID} <http://purl.org/biotop/btl2.owl#isPatientIn> ex:mimic4/admissions/{HADM_ID} . 
+source		select subject_id, hadm_id from admissions
+
+mappingId	adm-lab
+target		ex:mimic4/admissions/{hadm_id} <http://purl.obolibrary.org/obo/COB_0000072> ex:mimic4/labevents/{labevent_id} . 
+source		SELECT hadm_id, labevent_id FROM labevents;
+
+mappingId	outputevent
+target		ex:mimic4/outputevents/{caregiver_id}/{subject_id} a <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#OutputEvent> ; <http://purl.org/biotop/btl2.owl#hasAgent> ex:mimic4/caregiver/{caregiver_id} ; <http://purl.org/biotop/btl2.owl#hasPatient> ex:mimic4/patients/{subject_id} . 
+source		SELECT caregiver_id, subject_id FROM outputevents
+
+mappingId	caregiver
+target		ex:mimic4/caregiver/{caregiver_id} a <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#Caregiver> . 
+source		SELECT  * FROM caregiver
+
+mappingId	presc-act
+target		ex:mimic4/prescriptions/{pharmacy_id} a <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#PrescriptionAct> ; <http://purl.obolibrary.org/obo/COB_0000047> ex:mimic4/pharmacy/{pharmacy_id} ; <http://purl.obolibrary.org/obo/COB_0000070> ex:mimic4/poe/{poe_id} . 
+source		SELECT pharmacy_id, poe_id FROM prescriptions;
+
+mappingId	poe
+target		ex:mimic4/poe/{poe_id} a <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#ProviderOrderEntry> . 
+source		SELECT poe_id FROM poe
+
+mappingId	med
+target		ex:mimic4/pharmacy/{pharmacy_id} a <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#MedicationAdministration> ; <http://purl.obolibrary.org/obo/COB_0000070> ex:mimic4/poe/{poe_id} . 
+source		SELECT pharmacy_id, poe_id FROM pharmacy
+]]
+
