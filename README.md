@@ -1,52 +1,52 @@
 # mimic-onto
 
-Este repositório contém uma ontologia desenvolvida para representar semanticamente o banco de dados MIMIC-IV, permitindo a possibilidade de integração de dados biomédicos e a execução de consultas semânticas. O projeto utiliza conceitos de Ontologias Baseadas em Descrição (OBDA) para conectar um banco de dados relacional a uma representação ontológica.
+This repository contains an ontology developed to semantically represent the MIMIC-IV database, enabling the integration of biomedical data and the execution of semantic queries. The project uses Ontology-Based Data Access (OBDA) concepts to connect a relational database to an ontological representation.
 
-## Estrutura do Repositório
+## Repository Structure
 
-- `mimic-onto.owl`: Arquivo principal da ontologia em formato OWL.
-- `IAOImport.owl`: Arquivo da ontologia IAO.
-- `bfo-core.owl`: Arquivo da ontologia BFO.
-- `cob-full.owl`: Arquivo da ontologia COB.
-- `mimic-onto.obda`: Arquivo de mapeamento para integrar a ontologia com o banco de dados relacional.
+- `mimic-onto.owl`: Main ontology file in OWL format.
+- `IAOImport.owl`: IAO ontology file.
+- `bfo-core.owl`: BFO ontology file.
+- `cob-full.owl`: COB ontology file.
+- `mimic-onto.obda`: Mapping file to integrate the ontology with the relational database.
 
-## Requisitos
+## Requirements
 
-Para testar e explorar esta ontologia, você precisará:
+To test and explore this ontology, you will need:
 
-1. **Protégé com Ontop Plugin**: O Protégé é uma ferramenta para edição e exploração de ontologias. O plugin Ontop permite conectar a ontologia com o banco de dados e executar consultas SPARQL.
-   - Faça o download do Protégé: [Protégé](https://protege.stanford.edu/). Eu utilizei a versão 5.6.1
-   - Instale o plugin Ontop diretamente no Protégé (disponível no menu de plugins).
-2. **Banco de Dados MIMIC-IV**: Certifique-se de ter acesso ao banco de dados MIMIC-IV devidamente configurado.
-3. **Java**: Uma versão recente para suportar o Protégé e o plugin Ontop.
+1. **Protégé with Ontop Plugin**: Protégé is a tool for editing and exploring ontologies. The Ontop plugin allows you to connect the ontology with the database and execute SPARQL queries.
+   - Download Protégé: [Protégé](https://protege.stanford.edu/). I used version 5.6.1.
+   - Install the Ontop plugin directly in Protégé (available in the plugin menu).
+2. **MIMIC-IV Database**: Ensure you have access to the properly configured MIMIC-IV database.
+3. **Java**: A recent version to support Protégé and the Ontop plugin.
 
-## Como Testar
+## How to Test
 
-### Configurando o Plugin Ontop no Protégé
+### Configuring the Ontop Plugin in Protégé
 
-1. **Abra o Protégé**:
-   - Carregue o arquivo `ontology.owl` no Protégé. Certifique-se que os arquivos das outras ontologias sejam colocados na mesma pasta.
+1. **Open Protégé**:
+   - Load the ontology.owl file into Protégé. Ensure that the files for the other ontologies are placed in the same folder.
 
-2. **Instale e Configure o Plugin Ontop**:
-   - No Protégé, acesse o menu `File > Preferences > Plugins` e instale o plugin Ontop, caso ainda não esteja instalado.
-   - Após a instalação, vá para a aba "Ontop Mappings". Caso ela não apareça, habilite em VIEWS.
+2. **Install and Configure the Ontop Plugin**:
+   - In Protégé, go to the menu: File > Preferences > Plugins and install the Ontop plugin if it’s not already installed.
+   - After installation, go to the "Ontop Mappings" tab. If it does not appear, enable it under VIEWS.
 
-3. **Configure a Conexão com o Banco de Dados**:
-   - Acesse `Ontop Mapping Manager` e clique em `Data Source Configuration`.
-   - Preencha as informações da conexão:
-     - **JDBC Driver**: MySQL (ou o driver apropriado para a sua versão do mimic-iv).
-     - **JDBC URL**: `jdbc:mysql://<seu-host>:<porta>/<seu-banco>`.
-     - **Username** e **Password**: Insira as credenciais do banco de dados.
-3. **Coloque o arquivo .obda na mesma pasta e habilite a aba OntopMappings. Lá deve aparecer os mapeamentos.**
+3. **Configure the Database Connection**:
+   - Access the `Ontop Mapping Manager` and click on `Data Source Configuration`.
+   - Fill in the connection details:
+     - **JDBC Driver**: MySQL (or the appropriate driver for your version of MIMIC-IV).
+     - **JDBC URL**: `jdbc:mysql://<your-host>:<port>/<your-database>`.
+     - **Username** e **Password**: Enter the database credentials.
+3. **Place the .obda file in the same folder and enable the Ontop Mappings tab. The mappings should appear there.**
 
-4. **Executando Consultas SPARQL**:
-   - Vá para a aba `Ontop SPARQL` no Protégé.
-   - Carregue uma das consultas listadas.
-   - Clique em `Execute` para visualizar os resultados.
+4. **Running SPARQL Queries**:
+   - Go to the Ontop SPARQL tab in Protégé.
+   - Load one of the listed queries.
+   - Click "Execute" to view the results.
 
-### Exemplos de Consultas
+### Example Queries
 
-1. **Listar todos os pacientes com diagnósticos registrados**:
+1. **List all patients with recorded diagnoses:**:
    ```sparql
    PREFIX : <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#>
    SELECT DISTINCT ?patient WHERE {
@@ -54,7 +54,7 @@ Para testar e explorar esta ontologia, você precisará:
               :hasDiagnosis ?diagnosis .
    }
     ```
-1. **Quais são os pacientes que, ao participar de uma admissão, realizaram exames laboratoriais?**:
+1. **Which patients, upon admission, underwent laboratory tests?:**:
    ```sparql
    PREFIX : <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#>
    PREFIX btl2: <http://purl.org/biotop/btl2.owl#>
@@ -69,7 +69,7 @@ Para testar e explorar esta ontologia, você precisará:
    } 
 
 
-3. **Quais são as medicações solicitadas numa prescrição e declaradas na POE?**:
+3. **Which medications are requested in a prescription and declared in the POE?:**:
    ```sparql
    PREFIX : <http://www.semanticweb.org/emill/ontologies/2024/3/mimic-onto#>
    PREFIX btl2: <http://purl.org/biotop/btl2.owl#>
